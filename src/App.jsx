@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
-import useTextInputOutput from './useTextHandler';
-import React from 'react';
+import Input from './Input';
+import Output from './Output';
 
 const log = console.log;
 
@@ -11,10 +11,12 @@ function App() {
   // Look at w3s react forms and code of most liked TOP project
   //  for inspo
 
-  const [text, setText] = useState();
+  const [inputs, setInputs] = useState({});
 
-  function handleTextChange(e) {
-      setText(e.target.value);
+  function handleInputChange(e) {
+    const name = e.target.name;
+    const value = e.target.value;
+    setInputs(values => ({...values, [name]: value}));
   }
 
   return (
@@ -23,20 +25,25 @@ function App() {
 
       </header>
       <div id="content-wrapper">
-        <aside>
+        <nav>
 
-          <label>
-            Full Name: 
-            <input 
-              id='name-input' 
-              name='name'
-              onChange={handleTextChange}>
-
-            </input>
-          </label>
-        </aside>
+          
+        </nav>
         <main>
-          <p id='name-output'>{text}</p>
+          <div className='form-container'>
+            <Input 
+              label='Full Name'
+              id='full-name'
+              inputHandler={handleInputChange}
+            />
+          </div>
+          <div className='cv-container'>
+            <Output 
+              forInputId={'full-name'}
+              inputs={inputs}
+            />
+          </div>
+          
         </main>
       </div>
       <footer>
