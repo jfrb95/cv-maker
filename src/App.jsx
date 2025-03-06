@@ -36,10 +36,37 @@ function App() {
               id='full-name'
               inputHandler={handleInputChange}
             />
+            <Input
+              label='Email'
+              id='email'
+              inputHandler={handleInputChange}
+            />
+            <Input
+              label='Phone'
+              id='phone'
+              inputHandler={handleInputChange}
+            />
+            <Input
+              label='Address'
+              id='address'
+              inputHandler={handleInputChange}
+            />
           </div>
           <div className='cv-container'>
             <Output 
               forInputId={'full-name'}
+              inputs={inputs}
+            />
+            <Output
+              forInputId={'email'}
+              inputs={inputs}
+            />
+            <Output
+              forInputId={'phone'}
+              inputs={inputs}
+            />
+            <Output
+              forInputId={'address'}
               inputs={inputs}
             />
           </div>

@@ -4,4 +4,10 @@
 
 main {
   display: flex;
+  justify-content: center;
+}
+
+.cv-container {
+  height: 11.7in;
+  width: 8.3in;
 }
