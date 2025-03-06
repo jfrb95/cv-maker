@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Input from './Input';
 import Output from './Output';
+import Form from './Form';
 
 const log = console.log;
 
@@ -31,6 +32,11 @@ function App() {
         </nav>
         <main>
           <div className='form-container'>
+            <Form
+              inputIds={['full-name', 'email', 'phone', 'address']}
+              inputHandler={handleInputChange}
+            />
+            {/*
             <Input 
               label='Full Name'
               id='full-name'
@@ -51,6 +57,7 @@ function App() {
               id='address'
               inputHandler={handleInputChange}
             />
+            */}
           </div>
           <div className='cv-container'>
             <Output 
