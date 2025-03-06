@@ -1,17 +1,17 @@
 import Output from "./Output";
 
-export default function FormOutputs({ identifier, inputIds, inputs }) {
+export default function FormOutputs({ identifier, formHook }) {
 
     const classes = `${identifier} outputs`;
 
     return (
         <div className={classes}>
-            {inputIds.map(id => {
+            {formHook.inputIds.map(id => {
                 return (
                     <Output
                         key={id}
                         forInputId={id}
-                        inputs={inputs}
+                        inputs={formHook.inputs}
                     />
                 )
             })}

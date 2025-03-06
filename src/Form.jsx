@@ -1,7 +1,7 @@
 import Input from "./Input";
 import { kebabToTitle } from "./utilityFunctions";
 
-export default function Form({ identifier, inputIds, inputHandler }) {
+export default function Form({ identifier, formHook }) {
     
     const classes = `${identifier} inputs`;
     
@@ -11,13 +11,13 @@ export default function Form({ identifier, inputIds, inputHandler }) {
 
     return (
         <form className={classes} onSubmit={handleSubmit}>
-            {inputIds.map((id) => {
+            {formHook.inputIds.map((id) => {
                 return (
                     <Input
                         key={id}
                         label={kebabToTitle(id)}
                         id={id}
-                        inputHandler={inputHandler}
+                        inputHandler={formHook.handler}
                     />
                 )
             })}

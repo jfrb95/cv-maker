@@ -24,9 +24,6 @@ function App() {
   //  most likely form in/out and regular in/out too
   const education = useFormInOutPair(['school-name', 'title-of-study', 'start-date', 'end-date'])
 
-  //TODO: let Form and FormOutputs take only a useFormInOutPair
-  //  and do what they need to do with it internally
-
   return (
     <>
       <header>
@@ -42,30 +39,26 @@ function App() {
             <h2>Personal Information</h2>
             <Form
               identifier='personal-info'
-              inputIds={personalInfo.inputIds}
-              inputHandler={personalInfo.handler}
+              formHook={personalInfo}
             />
 
             <h2>Education</h2>
             <Form
               identifier='education'
-              inputIds={education.inputIds}
-              inputHandler={education.handler}
+              formHook={education}
             />
           </div>
           <div className='cv-container'>
             <p>Personal Info(temporary text)</p>
             <FormOutputs
               identifier='personal-info'
-              inputIds={personalInfo.inputIds}
-              inputs={personalInfo.inputs}
+              formHook={personalInfo}
             />
 
             <p>Education(temporary text)</p>
             <FormOutputs
               identifier={'education'}
-              inputIds={education.inputIds}
-              inputs={education.inputs}
+              formHook={education}
             />
           </div>
           
