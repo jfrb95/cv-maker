@@ -12,8 +12,6 @@ function App() {
 
   //TODO: let Input allow an argument to specify what element is
   //  returned. e.g. <input type=number>
-  //- similarly for Output, the returned element should be 
-  //  chosen using an argument. e.g. <h2> instead of <p>
   //- Form and FormOutputs should be updated to account for this
 
   const personalInfo = useFormInOutPair(
@@ -37,7 +35,7 @@ function App() {
   );
   
   //TODO: make education section able to add multiple educations
-  //  possibly make the argument and array of objects.
+  //  possibly make the argument an array of objects.
   //  will need to edit useFormInOutPair.jsx to do this,
   //  most likely form in/out and regular in/out too
   const education = useFormInOutPair(
