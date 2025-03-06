@@ -3,22 +3,22 @@ import './App.css'
 import Input from './Input';
 import Output from './Output';
 import Form from './Form';
+import FormOutputs from './FormOutputs';
 
 const log = console.log;
 
 function App() {
 
-  //Want to abstract the input/output into components. 
-  // Look at w3s react forms and code of most liked TOP project
-  //  for inspo
+  const personalInfo = {
 
+  }
   const [inputs, setInputs] = useState({});
-
   function handleInputChange(e) {
     const name = e.target.name;
     const value = e.target.value;
     setInputs(values => ({...values, [name]: value}));
   }
+  const personalInfoInputIds = ['full-name', 'email', 'phone', 'address'];
 
   return (
     <>
@@ -33,47 +33,14 @@ function App() {
         <main>
           <div className='form-container'>
             <Form
-              inputIds={['full-name', 'email', 'phone', 'address']}
+              inputIds={personalInfoInputIds}
               inputHandler={handleInputChange}
             />
-            {/*
-            <Input 
-              label='Full Name'
-              id='full-name'
-              inputHandler={handleInputChange}
-            />
-            <Input
-              label='Email'
-              id='email'
-              inputHandler={handleInputChange}
-            />
-            <Input
-              label='Phone'
-              id='phone'
-              inputHandler={handleInputChange}
-            />
-            <Input
-              label='Address'
-              id='address'
-              inputHandler={handleInputChange}
-            />
-            */}
           </div>
           <div className='cv-container'>
-            <Output 
-              forInputId={'full-name'}
-              inputs={inputs}
-            />
-            <Output
-              forInputId={'email'}
-              inputs={inputs}
-            />
-            <Output
-              forInputId={'phone'}
-              inputs={inputs}
-            />
-            <Output
-              forInputId={'address'}
+            <FormOutputs
+              identifier='personal-info'
+              inputIds={personalInfoInputIds}
               inputs={inputs}
             />
           </div>
