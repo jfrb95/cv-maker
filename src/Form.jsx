@@ -1,13 +1,16 @@
 import Input from "./Input";
 import { kebabToTitle } from "./utilityFunctions";
 
-export default function Form({ inputIds, inputHandler }) {
+export default function Form({ identifier, inputIds, inputHandler }) {
+    
+    const classes = `${identifier} inputs`;
+    
     function handleSubmit(event) {
         event.preventDefault();
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className={classes} onSubmit={handleSubmit}>
             {inputIds.map((id) => {
                 return (
                     <Input

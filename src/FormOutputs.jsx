@@ -17,5 +17,4 @@ export default function FormOutputs({ identifier, inputIds, inputs }) {
             })}
         </div>
     )
-
 }
