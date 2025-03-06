@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function useFormInOutPair(inputIds) {
+export default function useFormInOutPair(inputData) {
     const [inputs, setInputs] = useState({});
 
     function handler(e) {
@@ -12,6 +12,6 @@ export default function useFormInOutPair(inputIds) {
     return {
         inputs,
         handler,
-        inputIds
+        inputData
     }
 }

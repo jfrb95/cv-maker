@@ -1,5 +1,5 @@
-export default function Output({ forInputId, inputs }) {
+export default function Output({ forInputId, inputs, element:Element='p' }) {
     return (
-        <p>{inputs[forInputId]}</p>
+        <Element>{inputs[forInputId]}</Element>
     )
 }

@@ -16,13 +16,50 @@ function App() {
   //  chosen using an argument. e.g. <h2> instead of <p>
   //- Form and FormOutputs should be updated to account for this
 
-  const personalInfo = useFormInOutPair(['full-name', 'email', 'phone', 'address'])
+  const personalInfo = useFormInOutPair(
+    [
+      {
+        element: 'h1', 
+        id: 'full-name'
+      },
+      {
+        element: 'h3',
+        id: 'email'
+      }, 
+      {
+        element: 'h3',
+        id: 'phone'
+      }, 
+      {
+        element: 'h3',
+        id: 'address'}
+    ]
+  );
   
   //TODO: make education section able to add multiple educations
   //  possibly make the argument and array of objects.
   //  will need to edit useFormInOutPair.jsx to do this,
   //  most likely form in/out and regular in/out too
-  const education = useFormInOutPair(['school-name', 'title-of-study', 'start-date', 'end-date'])
+  const education = useFormInOutPair(
+    [
+      {
+        element: 'p',
+        id: 'school-name'
+      }, 
+      {
+        element: 'p',
+        id: 'title-of-study'
+      }, 
+      {
+        element: 'p',
+        id: 'start-date'
+      }, 
+      {
+        element: 'p',
+        id: 'end-date'
+      }
+    ]
+  );
 
   return (
     <>

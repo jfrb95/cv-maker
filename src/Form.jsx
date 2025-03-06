@@ -11,12 +11,12 @@ export default function Form({ identifier, formHook }) {
 
     return (
         <form className={classes} onSubmit={handleSubmit}>
-            {formHook.inputIds.map((id) => {
+            {formHook.inputData.map((input) => {
                 return (
                     <Input
-                        key={id}
-                        label={kebabToTitle(id)}
-                        id={id}
+                        key={input.id}
+                        label={kebabToTitle(input.id)}
+                        id={input.id}
                         inputHandler={formHook.handler}
                     />
                 )

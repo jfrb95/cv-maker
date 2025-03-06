@@ -6,12 +6,13 @@ export default function FormOutputs({ identifier, formHook }) {
 
     return (
         <div className={classes}>
-            {formHook.inputIds.map(id => {
+            {formHook.inputData.map(input => {
                 return (
                     <Output
-                        key={id}
-                        forInputId={id}
+                        key={input.id}
+                        forInputId={input.id}
                         inputs={formHook.inputs}
+                        element={input.element}
                     />
                 )
             })}
