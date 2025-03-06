@@ -10,6 +10,12 @@ const log = console.log;
 
 function App() {
 
+  //TODO: let Input allow an argument to specify what element is
+  //  returned. e.g. <input type=number>
+  //- similarly for Output, the returned element should be 
+  //  chosen using an argument. e.g. <h2> instead of <p>
+  //- Form and FormOutputs should be updated to account for this
+
   const personalInfo = useFormInOutPair(['full-name', 'email', 'phone', 'address'])
   
   //TODO: make education section able to add multiple educations
@@ -18,6 +24,8 @@ function App() {
   //  most likely form in/out and regular in/out too
   const education = useFormInOutPair(['school-name', 'title-of-study', 'start-date', 'end-date'])
 
+  //TODO: let Form and FormOutputs take only a useFormInOutPair
+  //  and do what they need to do with it internally
 
   return (
     <>
