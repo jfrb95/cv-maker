@@ -1,24 +1,17 @@
-import Input from "./Input";
-import { kebabToTitle } from "../utilityFunctions";
+import { kebabToTitle } from "../utilityFunctions"
+import Input from "./Input"
 
-export default function Form({ identifier, formHook }) {
 
-    const classes = `${identifier} inputs`;
-    
-    function handleSubmit(event) {
-        event.preventDefault();
-    }
-
+export default function Form({ formInputs}) {
     return (
-        <form className={classes} onSubmit={handleSubmit}>
-            {formHook.inputData.map((input) => {
+        <form>
+            {formInputs.map((inputData) => {
                 return (
                     <Input
-                        key={input.id}
-                        inputType={input.type}
-                        label={kebabToTitle(input.id)}
-                        id={input.id}
-                        inputHandler={formHook.handler}
+                        key={crypto.randomUUID()}
+                        label={kebabToTitle(inputData.id)}
+                        id={inputData.id}
+                        inputType={inputData.type}
                     />
                 )
             })}

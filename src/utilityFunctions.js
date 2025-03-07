@@ -5,7 +5,12 @@ function capitalizeFirstLetter(str) {
     return str[0].toUpperCase() + str.slice(1);
 }
 
-
+export function toTitleCase(str) {
+    return str
+        .split(' ')
+        .map(str => capitalizeFirstLetter(str))
+        .join(' ');
+}
 
 export function kebabToTitle(str) {
     return str

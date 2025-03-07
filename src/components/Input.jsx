@@ -1,5 +1,4 @@
 export default function Input({ label, id, inputHandler, inputType='text'}) {
-
     const Element = (inputType === 'textarea') 
         ? 'textarea'
         : 'input'
