@@ -33,6 +33,10 @@ function App() {
     ]
   );
   
+  //TODO: Split each section into 'sections'.
+  // -Then the education and experience sections can have an
+  //  'add new' option and a 'remove' option
+
   //TODO: make education section able to add multiple educations
   //  possibly make the argument an array of objects.
   //  will need to edit useFormInOutPair.jsx to do this,
