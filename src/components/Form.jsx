@@ -1,5 +1,5 @@
 import Input from "./Input";
-import { kebabToTitle } from "./utilityFunctions";
+import { kebabToTitle } from "../utilityFunctions";
 
 export default function Form({ identifier, formHook }) {
 

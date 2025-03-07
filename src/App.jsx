@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import './App.css'
-import Input from './Input';
-import Output from './Output';
-import Form from './Form';
-import FormOutputs from './FormOutputs';
-import useFormInOutPair from './useFormInOutPair';
+import './styles/App.css'
+import Input from './components/Input';
+import Output from './components/Output';
+import Form from './components/Form';
+import FormOutputs from './components/FormOutputs';
+import useFormInOutPair from './hooks/useFormInOutPair';
 
 const log = console.log;
 
