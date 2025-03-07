@@ -1,9 +1,15 @@
-export default function Input({ label, id, inputHandler }) {
+export default function Input({ label, id, inputHandler, inputType='text'}) {
+
+    const Element = (inputType === 'textarea') 
+        ? 'textarea'
+        : 'input'
+    
     return (
         <label>
             {label}
-            <input 
+            <Element 
                 id={id + '-input'}
+                type={inputType}
                 name={id}
                 onChange={inputHandler} 
             />

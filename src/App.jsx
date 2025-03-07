@@ -10,10 +10,8 @@ const log = console.log;
 
 function App() {
 
-  //TODO: let Input allow an argument to specify what element is
-  //  returned. e.g. <input type=number>
-  //- Form and FormOutputs should be updated to account for this
-
+  //TODO: change useFormInOutPair, FormOutputs, and Output to 
+  //  let classes be specified in the arguments
   const personalInfo = useFormInOutPair(
     [
       {
@@ -26,7 +24,8 @@ function App() {
       }, 
       {
         element: 'h3',
-        id: 'phone'
+        id: 'phone',
+        type: 'number'
       }, 
       {
         element: 'h3',
@@ -59,6 +58,32 @@ function App() {
     ]
   );
 
+  const experience = useFormInOutPair(
+    [
+      {
+        element: 'p',
+        id: 'company-name'
+      },
+      {
+        element: 'p',
+        id: 'position-title'
+      },
+      {
+        element: 'p',
+        id: 'main-responsibilities',
+        type: 'textarea'
+      },
+      {
+        element: 'p',
+        id: 'start-date'
+      },
+      {
+        element: 'p',
+        id: 'end-date'
+      },
+    ]
+  )
+
   return (
     <>
       <header>
@@ -82,6 +107,12 @@ function App() {
               identifier='education'
               formHook={education}
             />
+
+            <h2>Experience</h2>
+            <Form
+              identifier='experience'
+              formHook={experience}
+            />
           </div>
           <div className='cv-container'>
             <p>Personal Info(temporary text)</p>
@@ -92,8 +123,14 @@ function App() {
 
             <p>Education(temporary text)</p>
             <FormOutputs
-              identifier={'education'}
+              identifier='education'
               formHook={education}
+            />
+
+            <p>Experience(temporary text)</p>
+            <FormOutputs
+              identifier='experience'
+              formHook={experience}
             />
           </div>
           
