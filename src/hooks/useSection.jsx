@@ -1,27 +1,21 @@
-//This hook is to be passed into a Section and SectionOutput
+import { useState } from "react";
 
-//'stateHandler' will be a hook defined in App.jsx so that 
-//  a sectionOutput can also be connected to it.
+export default function useSection() {
 
-export default function useSection({ sectionIdentifier }) {
-
-    //sectionData:
-    /*
-        [
-            schoolNameVal: {
-                schoolName: schoolNameVal
-                
-            }
-        ]
-    */
-
-    const [sectionData, setSectionData] = useState();
+    const [sectionData, setSectionData] = useState({});
     
-    function handler(event) {
-        
+    function handle(event) {
+        if (event.target.tagName === 'INPUT' ||
+            event.target.tagName === 'TEXTAREA'
+        ) {
+            const id = event.target.id;
+            const value = event.target.value;
+            setSectionData((values) => ({...values, [id]: value}));
+        }
     }
 
-    return (
-
-    )
+    return {
+        sectionData,
+        handle
+    }
 }

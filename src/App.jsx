@@ -4,18 +4,12 @@ import Input from './components/Input';
 import Output from './components/Output';
 import Section from './components/Section';
 import Form from './components/Form';
+import useSection from './hooks/useSection';
 
 const log = console.log;
 
 function App() {
-
-
-  //section state will be a flat object, each input will have
-  //  unique id
-  const [sectionState, setSectionState] = useState({});
-
-  //may need to change sectionData to be flat or something else
-
+  console.log('App rendered');
 
   function createEducationForm() {
     
@@ -44,6 +38,12 @@ function App() {
     createEducationForm()
   ]
 
+  const educationHandler = useSection()
+  function logEducationSectionData() {
+    console.log(educationHandler.sectionData);
+  }
+
+
   return (
     <>
       <header>
@@ -55,10 +55,12 @@ function App() {
           
         </nav>
         <main>
+          <button onClick={logEducationSectionData}>Log Education sectionData</button>
           <div className='form-container'>
             <Section
               sectionForms={educationForms}
               sectionId='education'
+              handler={educationHandler.handle}
             />
           </div>
           <div className='cv-container'>

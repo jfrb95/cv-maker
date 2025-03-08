@@ -1,7 +1,7 @@
 import { kebabToTitle } from "../utilityFunctions";
 import Form from "./Form";
 
-export default function Section({ sectionForms, sectionId }) {
+export default function Section({ sectionForms, sectionId, handler }) {
     return (
         <>
         <button className='add-form'>
@@ -14,10 +14,11 @@ export default function Section({ sectionForms, sectionId }) {
         {sectionForms.map((formInputs, index) => {
             return (
                 <Form
-                    id={index}
+                    id={'form' + index}
                     key={crypto.randomUUID()}
                     className='section-form'
                     formInputs={formInputs}
+                    handler={handler}
                 />
             )
         })}
