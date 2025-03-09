@@ -88,11 +88,18 @@ function App() {
             />
 
             <Form
+              formInputs={[{id: 'test-form-input'}]}
+              id='test-form'
+              handler={educationHandler}
+            />
+
+            {/*
+            <Form
               formInputs={singleFormData}
               id={'test-form'}
               handler={educationHandler}
             />
-            {/*
+            
             <Section
               sectionForms={educationForms}
               sectionId='education'
