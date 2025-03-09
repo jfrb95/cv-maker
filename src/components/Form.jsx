@@ -10,7 +10,7 @@ export default function Form({ formInputs, id, handler }) {
     
     return (
         <form 
-            id={'form' + id}
+            id={id}
             onSubmit={handleSubmit}
         >
             {formInputs.map((inputData) => {
