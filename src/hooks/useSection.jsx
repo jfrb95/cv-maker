@@ -10,7 +10,7 @@ export default function useSection() {
         ) {
             const id = event.target.id;
             const value = event.target.value;
-            setSectionData((values) => ({...values, [id]: value}));
+            setSectionData(values => ({...values, [id]: value}));
         }
     }
 

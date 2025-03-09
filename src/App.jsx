@@ -9,7 +9,6 @@ import useSection from './hooks/useSection';
 const log = console.log;
 
 function App() {
-  console.log('App rendered');
 
   function createEducationForm() {
     
@@ -32,6 +31,22 @@ function App() {
     return formData;
   }
 
+  const formData = 
+      [
+        {
+          id: 'school-name'
+        },
+        {
+          id: 'title-of-study'
+        },
+        {
+          id: 'start-date'
+        },
+        {
+          id: 'end-date'
+        }
+      ]
+
   const educationForms = [
     createEducationForm(),
     createEducationForm(),
@@ -43,6 +58,11 @@ function App() {
     console.log(educationHandler.sectionData);
   }
 
+
+  //Testing a lone input produces correct results
+  //testing lone form produces input resets
+  // focus on why it works in previous implementation 
+  // but not this one
 
   return (
     <>
@@ -57,6 +77,18 @@ function App() {
         <main>
           <button onClick={logEducationSectionData}>Log Education sectionData</button>
           <div className='form-container'>
+            <Input
+              label='Test Input'
+              id='test-input'
+              inputHandler={educationHandler.handle}
+            />
+
+            <Form
+              formInputs={formData}
+              id={'test-form'}
+              handler={educationHandler}
+            />
+            
             <Section
               sectionForms={educationForms}
               sectionId='education'
