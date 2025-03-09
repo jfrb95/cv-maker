@@ -55,6 +55,8 @@ function App() {
     createEducationForm()
   ]
 
+  const singleFormData = createEducationForm();
+
   const educationHandler = useSection();
   function logEducationSectionData() {
     console.log(educationHandler.sectionData);
@@ -86,16 +88,18 @@ function App() {
             />
 
             <Form
-              formInputs={formData}
+              formInputs={singleFormData}
               id={'test-form'}
               handler={educationHandler}
             />
-            
+            {/*
             <Section
               sectionForms={educationForms}
               sectionId='education'
               handler={educationHandler}
+              
             />
+            */}
           </div>
           <div className='cv-container'>
 

@@ -8,9 +8,8 @@ export default function useSection() {
         if (event.target.tagName === 'INPUT' ||
             event.target.tagName === 'TEXTAREA'
         ) {
-            const id = event.target.id;
-            const value = event.target.value;
-            setSectionData(values => ({...values, [id]: value}));
+            const { name, value } = event.target;
+            setSectionData(values => ({...values, [name]: value}));
         }
     }
 
