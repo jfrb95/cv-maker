@@ -60,7 +60,7 @@ function App() {
             <Section
               sectionForms={educationForms}
               sectionId='education'
-              handler={educationHandler.handle}
+              handler={educationHandler}
             />
           </div>
           <div className='cv-container'>

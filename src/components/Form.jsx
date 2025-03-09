@@ -20,7 +20,7 @@ export default function Form({ formInputs, id, handler }) {
                         label={kebabToTitle(inputData.id)}
                         id={id + '-' + inputData.id}
                         inputType={inputData.type}
-                        inputHandler={handler}
+                        inputHandler={handler.handle}
                     />
                 )
             })}
