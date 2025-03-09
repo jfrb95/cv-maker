@@ -34,20 +34,20 @@ function App() {
   }
 
   const formData = 
-        [
-          {
-            id: 'school-name'
-          },
-          {
-            id: 'title-of-study'
-          },
-          {
-            id: 'start-date'
-          },
-          {
-            id: 'end-date'
-          }
-        ]
+    [
+      {
+        id: 'school-name'
+      },
+      {
+        id: 'title-of-study'
+      },
+      {
+        id: 'start-date'
+      },
+      {
+        id: 'end-date'
+      }
+    ]
 
   const educationForms = [
     createEducationForm(),
