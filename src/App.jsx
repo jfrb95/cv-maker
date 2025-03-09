@@ -8,6 +8,27 @@ import useSection from './hooks/useSection';
 
 const log = console.log;
 
+function createEducationForm() {
+    
+  const formData = 
+    [
+      {
+        id: 'school-name'
+      },
+      {
+        id: 'title-of-study'
+      },
+      {
+        id: 'start-date'
+      },
+      {
+        id: 'end-date'
+      }
+    ]
+  
+  return formData;
+}
+
 function App() {
 
   function createEducationForm() {
@@ -53,7 +74,7 @@ function App() {
     createEducationForm()
   ]
 
-  const educationHandler = useSection()
+  const educationHandler = useSection();
   function logEducationSectionData() {
     console.log(educationHandler.sectionData);
   }
