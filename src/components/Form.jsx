@@ -16,7 +16,7 @@ export default function Form({ formInputs, id, handler }) {
             {formInputs.map((inputData) => {
                 return (
                     <Input
-                        key={crypto.randomUUID()}
+                        key={id + inputData.id}
                         label={kebabToTitle(inputData.id)}
                         id={id + '-' + inputData.id}
                         inputType={inputData.type}

@@ -14,8 +14,8 @@ export default function Section({ sectionForms, sectionId, handler }) {
         {sectionForms.map((formInputs, index) => {
             return (
                 <Form
+                    key={'form' + index}
                     id={'form' + index}
-                    key={crypto.randomUUID()}
                     className='section-form'
                     formInputs={formInputs}
                     handler={handler}

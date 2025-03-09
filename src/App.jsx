@@ -81,32 +81,14 @@ function App() {
         <main>
           <button onClick={logEducationSectionData}>Log Education sectionData</button>
           <div className='form-container'>
-            <Input
-              label='Test Input'
-              id='test-input'
-              inputHandler={educationHandler.handle}
-            />
 
-            <Form
-              formInputs={[{id: 'test-form-input'}]}
-              id='test-form'
-              handler={educationHandler}
-            />
-
-            {/*
-            <Form
-              formInputs={singleFormData}
-              id={'test-form'}
-              handler={educationHandler}
-            />
-            
             <Section
               sectionForms={educationForms}
               sectionId='education'
               handler={educationHandler}
               
             />
-            */}
+
           </div>
           <div className='cv-container'>
 
