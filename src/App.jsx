@@ -6,6 +6,7 @@ import Section from './components/Section';
 import Form from './components/Form';
 import useSection from './hooks/useSection';
 import FormOutput from './components/FormOutput';
+import SectionOutput from './components/SectionOutputs';
 
 const log = console.log;
 
@@ -92,9 +93,9 @@ function App() {
 
           </div>
           <div className='cv-container'>
-            <FormOutput
+            <SectionOutput
               handler={educationHandler}
-              formData={formData}
+              formMap={educationForms}
             />
           </div>
           

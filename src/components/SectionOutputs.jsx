@@ -1,17 +1,18 @@
 import FormOutput from "./FormOutput"
 
-export default function SectionOutput({ handler }) {
-    //currently this is returning a form output per item in
-    //  sectionData, this is not correct. It should match 
-    //  what is currently 'educationData' in App.jsx
+export default function SectionOutput({ handler, formMap }) {
 
     return (
         <>
-            {handler.sectionData.map((formData) => {
+            {formMap.map((form, index) => {
+                const formPrefix = `form${index}-`;
+
                 return (
                     <FormOutput
+                        key={`${formPrefix}output`}
                         handler={handler}
-                        formData={formData}
+                        formData={form}
+                        formPrefix={formPrefix}
                     />
                 )
             })}
