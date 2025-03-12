@@ -10,7 +10,7 @@ import SectionOutput from './components/SectionOutputs';
 
 const log = console.log;
 
-
+//GO THROUGH AND SORT OUT A NICE NAMING SCHEME
 
 function App() {
 
@@ -35,13 +35,18 @@ function App() {
     return formData;
   }
 
-  const formData = 
+  function createExperienceForm() {
+    const formData = 
     [
       {
-        id: 'school-name'
+        id: 'company-name'
       },
       {
-        id: 'title-of-study'
+        id: 'position-title'
+      },
+      {
+        id: 'main-responsibilities',
+        element: 'text-area'
       },
       {
         id: 'start-date'
@@ -50,11 +55,20 @@ function App() {
         id: 'end-date'
       }
     ]
+    return formData;
+  }
 
   const educationForms = [
     createEducationForm(),
     createEducationForm(),
     createEducationForm()
+  ]
+
+  const experienceForms = [
+    createExperienceForm(),
+    createExperienceForm(),
+    createExperienceForm(),
+    createExperienceForm()
   ]
 
   const singleFormData = createEducationForm();
@@ -64,11 +78,7 @@ function App() {
     console.log(educationHandler.sectionData);
   }
 
-
-  //Testing a lone input produces correct results
-  //testing lone form produces input resets
-  // focus on why it works in previous implementation 
-  // but not this one
+  const experienceHandler = useSection();
 
   return (
     <>
@@ -88,15 +98,27 @@ function App() {
               sectionForms={educationForms}
               sectionId='education'
               handler={educationHandler}
-              
+            />
+
+            <Section
+              sectionForms={experienceForms}
+              sectionId='experience'
+              handler={experienceHandler}
             />
 
           </div>
           <div className='cv-container'>
+
             <SectionOutput
               handler={educationHandler}
               formMap={educationForms}
             />
+
+            <SectionOutput
+              handler={experienceHandler}
+              formMap={experienceForms}
+            />
+
           </div>
           
         </main>

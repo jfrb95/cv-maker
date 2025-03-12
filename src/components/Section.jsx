@@ -2,6 +2,8 @@ import { kebabToTitle } from "../utilityFunctions";
 import Form from "./Form";
 
 export default function Section({ sectionForms, sectionId, handler }) {
+    console.log(sectionForms);
+    
     return (
         <>
         <button className='add-form'>
