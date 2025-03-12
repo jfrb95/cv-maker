@@ -1,16 +1,23 @@
 import Output from "./Output"
 
-export default function FormOutput({ handler, formData }) {
-    //GET IDS FROM FORMDATA
-    
+export default function FormOutput({ handler, formData, formPrefix }) {
+    //formPrefix is 'form1-', 'form0-' etc
+    console.log(handler.sectionData);
     return (
         <>
             {formData.map((outputData) => {
                 return (
-                    <Output
-                        forInputId={}
-                        inputState={handler.sectionData}
-                    />
+                    Object.keys(outputData).map((key) => {
+                        console.log(outputData[key]);
+                        return (
+                            <Output
+                                key={key}
+                                forInputId={formPrefix + key}
+                                inputState={handler.sectionData}
+                                element={outputData[key].element}
+                            />
+                        )
+                    })
                 )
             })}
         </>
