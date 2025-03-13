@@ -1,17 +1,17 @@
 import FormOutput from "./FormOutput"
 
-export default function SectionOutput({ handler, formMap }) {
+export default function SectionOutput({ sectionMap, handler }) {
 
     return (
         <>
-            {formMap.map((form, index) => {
+            {sectionMap.map((formMap, index) => {
                 const formPrefix = `form${index}-`;
 
                 return (
                     <FormOutput
                         key={`${formPrefix}output`}
                         handler={handler}
-                        formData={form}
+                        formMap={formMap}
                         formPrefix={formPrefix}
                     />
                 )

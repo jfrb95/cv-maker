@@ -2,7 +2,7 @@ import { kebabToTitle } from "../utilityFunctions"
 import Input from "./Input"
 
 
-export default function Form({ formInputs, id, handler }) {
+export default function Form({ formMap, id, handler }) {
     
     function handleSubmit(event) {
         event.preventDefault();
@@ -13,7 +13,7 @@ export default function Form({ formInputs, id, handler }) {
             id={id}
             onSubmit={handleSubmit}
         >
-            {formInputs.map((inputData) => {
+            {formMap.map((inputData) => {
                 return (
                     <Input
                         key={id + inputData.id}

@@ -35,23 +35,7 @@ function App() {
     return formData;
   }
 
-  const formData = 
-    [
-      {
-        id: 'school-name'
-      },
-      {
-        id: 'title-of-study'
-      },
-      {
-        id: 'start-date'
-      },
-      {
-        id: 'end-date'
-      }
-    ]
-
-  const educationForms = [
+  const educationMap = [
     createEducationForm(),
     createEducationForm(),
     createEducationForm()
@@ -81,21 +65,20 @@ function App() {
           
         </nav>
         <main>
-          <button onClick={logEducationSectionData}>Log Education sectionData</button>
+        
           <div className='form-container'>
 
             <Section
-              sectionForms={educationForms}
-              sectionId='education'
+              sectionMap={educationMap}
               handler={educationHandler}
-              
+              sectionId='education'
             />
 
           </div>
           <div className='cv-container'>
             <SectionOutput
+              sectionMap={educationMap}
               handler={educationHandler}
-              formMap={educationForms}
             />
           </div>
           
