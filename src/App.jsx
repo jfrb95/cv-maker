@@ -10,7 +10,7 @@ import SectionOutput from './components/SectionOutputs';
 
 const log = console.log;
 
-//GO THROUGH AND SORT OUT A NICE NAMING SCHEME
+
 
 function App() {
 
@@ -35,40 +35,10 @@ function App() {
     return formData;
   }
 
-  function createExperienceForm() {
-    const formData = 
-    [
-      {
-        id: 'company-name'
-      },
-      {
-        id: 'position-title'
-      },
-      {
-        id: 'main-responsibilities',
-        element: 'text-area'
-      },
-      {
-        id: 'start-date'
-      },
-      {
-        id: 'end-date'
-      }
-    ]
-    return formData;
-  }
-
-  const educationForms = [
+  const educationMap = [
     createEducationForm(),
     createEducationForm(),
     createEducationForm()
-  ]
-
-  const experienceForms = [
-    createExperienceForm(),
-    createExperienceForm(),
-    createExperienceForm(),
-    createExperienceForm()
   ]
 
   const singleFormData = createEducationForm();
@@ -78,7 +48,11 @@ function App() {
     console.log(educationHandler.sectionData);
   }
 
-  const experienceHandler = useSection();
+
+  //Testing a lone input produces correct results
+  //testing lone form produces input resets
+  // focus on why it works in previous implementation 
+  // but not this one
 
   return (
     <>
@@ -97,27 +71,15 @@ function App() {
             <Section
               sectionMap={educationMap}
               handler={educationHandler}
-            />
-
-            <Section
-              sectionForms={experienceForms}
-              sectionId='experience'
-              handler={experienceHandler}
+              sectionId='education'
             />
 
           </div>
           <div className='cv-container'>
-
             <SectionOutput
               sectionMap={educationMap}
               handler={educationHandler}
             />
-
-            <SectionOutput
-              handler={experienceHandler}
-              formMap={experienceForms}
-            />
-
           </div>
           
         </main>
