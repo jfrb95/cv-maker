@@ -91,12 +91,11 @@ function App() {
           
         </nav>
         <main>
-          <button onClick={logEducationSectionData}>Log Education sectionData</button>
+        
           <div className='form-container'>
 
             <Section
-              sectionForms={educationForms}
-              sectionId='education'
+              sectionMap={educationMap}
               handler={educationHandler}
             />
 
@@ -110,8 +109,8 @@ function App() {
           <div className='cv-container'>
 
             <SectionOutput
+              sectionMap={educationMap}
               handler={educationHandler}
-              formMap={educationForms}
             />
 
             <SectionOutput
