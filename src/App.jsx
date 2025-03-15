@@ -7,6 +7,7 @@ import Form from './components/Form';
 import useSection from './hooks/useSection';
 import FormOutput from './components/FormOutput';
 import SectionOutput from './components/SectionOutputs';
+import formMap from './formMap';
 
 const log = console.log;
 
@@ -14,45 +15,24 @@ const log = console.log;
 
 function App() {
 
-  function createEducationForm() {
-    
-    const formData = 
-      [
-        {
-          id: 'school-name'
-        },
-        {
-          id: 'title-of-study'
-        },
-        {
-          id: 'start-date'
-        },
-        {
-          id: 'end-date'
-        }
-      ]
-    
-    return formData;
+  const createFormMap = formMap();
+
+  function section(formMapFunc) {
+    const map = [formMapFunc()];
+
+    function addForm() {
+      map.push(formMapFunc);
+    }
+
+    return {
+      addForm,
+      map
+    }
   }
 
-  const educationMap = [
-    createEducationForm(),
-    createEducationForm(),
-    createEducationForm()
-  ]
-
-  const singleFormData = createEducationForm();
+  const educationSection = section(createFormMap.education);
 
   const educationHandler = useSection();
-  function logEducationSectionData() {
-    console.log(educationHandler.sectionData);
-  }
-
-
-  //Testing a lone input produces correct results
-  //testing lone form produces input resets
-  // focus on why it works in previous implementation 
-  // but not this one
 
   return (
     <>
@@ -69,7 +49,7 @@ function App() {
           <div className='form-container'>
 
             <Section
-              sectionMap={educationMap}
+              sectionMap={educationSection.map}
               handler={educationHandler}
               sectionId='education'
             />
@@ -77,7 +57,7 @@ function App() {
           </div>
           <div className='cv-container'>
             <SectionOutput
-              sectionMap={educationMap}
+              sectionMap={educationSection.map}
               handler={educationHandler}
             />
           </div>

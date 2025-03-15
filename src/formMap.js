@@ -1,4 +1,12 @@
-export function personalInformation() {
+export default function formMap() {
+  return {
+    personalInformation,
+    education,
+    experience
+  }
+}
+
+function personalInformation() {
   const formMap = 
     [
       {
@@ -15,7 +23,7 @@ export function personalInformation() {
   return formMap;
 }
 
-export function education() {
+function education() {
   const formMap = 
     [
       {
@@ -35,7 +43,7 @@ export function education() {
   return formMap;
 }
 
-export function experience() {
+function experience() {
   const formMap = 
     [
       {

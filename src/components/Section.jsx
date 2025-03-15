@@ -18,7 +18,6 @@ export default function Section({ sectionMap, sectionId, handler }) {
 
         {sectionMap.map((formMap, index) => {
             
-            
             return (
                 <Form
                     key={'form' + index}
