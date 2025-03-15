@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function useSection() {
+export default function useSectionHandler() {
 
     const [sectionData, setSectionData] = useState({});
     

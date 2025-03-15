@@ -1,22 +1,15 @@
 import { kebabToTitle } from "../utilityFunctions";
 import Form from "./Form";
 
-export default function Section({ sectionMap, sectionId, handler }) {
-    
-    function addFormMap() {
-
-    }
+export default function Section({ section, sectionId, handler }) {
     
     return (
         <>
-        <button className='add-form'>
-            {//click button to add new Form of predefined type
-             //(education or experience)
-            }
+        <button className='add-form' onClick={section.addForm}>
             Add {kebabToTitle(sectionId)}
         </button>
 
-        {sectionMap.map((formMap, index) => {
+        {section.map.map((formMap, index) => {
             
             return (
                 <Form

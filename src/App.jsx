@@ -4,7 +4,7 @@ import Input from './components/Input';
 import Output from './components/Output';
 import Section from './components/Section';
 import Form from './components/Form';
-import useSection from './hooks/useSection';
+import useSectionHandler from './hooks/useSectionHandler';
 import FormOutput from './components/FormOutput';
 import SectionOutput from './components/SectionOutputs';
 import formMap from './formMap';
@@ -21,7 +21,8 @@ function App() {
     const map = [formMapFunc()];
 
     function addForm() {
-      map.push(formMapFunc);
+      map.push(formMapFunc());
+      console.log(map);
     }
 
     return {
@@ -31,8 +32,7 @@ function App() {
   }
 
   const educationSection = section(createFormMap.education);
-
-  const educationHandler = useSection();
+  const educationHandler = useSectionHandler();
 
   return (
     <>
@@ -49,7 +49,7 @@ function App() {
           <div className='form-container'>
 
             <Section
-              sectionMap={educationSection.map}
+              section={educationSection}
               handler={educationHandler}
               sectionId='education'
             />
@@ -57,7 +57,7 @@ function App() {
           </div>
           <div className='cv-container'>
             <SectionOutput
-              sectionMap={educationSection.map}
+              section={educationSection}
               handler={educationHandler}
             />
           </div>

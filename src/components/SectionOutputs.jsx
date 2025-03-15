@@ -1,10 +1,10 @@
 import FormOutput from "./FormOutput"
 
-export default function SectionOutput({ sectionMap, handler }) {
+export default function SectionOutput({ section, handler }) {
 
     return (
         <>
-            {sectionMap.map((formMap, index) => {
+            {section.map.map((formMap, index) => {
                 const formPrefix = `form${index}-`;
 
                 return (
