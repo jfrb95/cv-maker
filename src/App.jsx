@@ -15,6 +15,8 @@ const log = console.log;
 
 function App() {
 
+  //NEED TO PUT section.map INTO state IN useSectionHandler
+
   const createFormMap = formMap();
 
   function section(formMapFunc) {
