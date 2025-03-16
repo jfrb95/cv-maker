@@ -1,13 +1,13 @@
 import { useState } from "react"
 
-export default function useSectionMapHandler() {
+export default function useSectionMapHandler(formMapFunc) {
 
-  const [map, setMap] = useState({});
+  const [map, setMap] = useState([]);
 
   function handle(event) {
     //click button > set map to { map, new section-specific map}
-
-    setMap();
+    const newFormMap = formMapFunc();
+    setMap(values => [...values, newFormMap]);
   }
 
   return {

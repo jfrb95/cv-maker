@@ -8,6 +8,7 @@ import useSectionHandler from './hooks/useSectionHandler';
 import FormOutput from './components/FormOutput';
 import SectionOutput from './components/SectionOutputs';
 import formMap from './formMap';
+import useSectionMapHandler from './hooks/useSectionMapHandler';
 
 const log = console.log;
 
@@ -33,7 +34,7 @@ function App() {
     }
   }
 
-  const educationSection = section(createFormMap.education);
+  const educationSection = useSectionMapHandler(createFormMap.education);
   const educationHandler = useSectionHandler();
 
   return (
