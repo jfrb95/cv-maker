@@ -13,7 +13,7 @@ export default function Form({ formMap, id, handler }) {
             id={id}
             onSubmit={handleSubmit}
         >
-            {formMap.map((inputData) => {
+            {formMap.map.map((inputData) => {
                 return (
                     <Input
                         key={id + inputData.id}

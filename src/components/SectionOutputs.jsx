@@ -9,7 +9,7 @@ export default function SectionOutput({ sectionHandler }) {
 
                 return (
                     <FormOutput
-                        key={`${formPrefix}output`}
+                        key={`${formMap.key}output`}
                         handler={sectionHandler}
                         formMap={formMap}
                         formPrefix={formPrefix}

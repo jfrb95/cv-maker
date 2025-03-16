@@ -9,7 +9,7 @@ export default function FormOutput({ handler, formMap, formPrefix }) {
 
   return (
     <>
-      {formMap.map((output) => {
+      {formMap.map.map((output) => {
         return (
           Object.keys(output).map((key) => {
             console.log('output[key]', output[key]);

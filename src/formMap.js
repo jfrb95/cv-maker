@@ -7,8 +7,9 @@ export default function formMap() {
 }
 
 function personalInformation() {
-  const formMap = 
-    [
+  const form = {
+    key: crypto.randomUUID(),
+    map: [
       {
         id: 'name'
       },
@@ -19,13 +20,15 @@ function personalInformation() {
         id: 'phone'
       }
     ]
+  }
 
-  return formMap;
+  return form;
 }
 
 function education() {
-  const formMap = 
-    [
+  const form = {
+    key: crypto.randomUUID(),
+    map: [
       {
         id: 'school-name'
       },
@@ -39,13 +42,14 @@ function education() {
         id: 'end-date'
       }
     ]
-
-  return formMap;
+}
+  return form;
 }
 
 function experience() {
-  const formMap = 
-    [
+  const form = {
+    key: crypto.randomUUID(),
+    map: [
       {
         id: 'company-name'
       },
@@ -63,6 +67,6 @@ function experience() {
         id: 'end-date'
       }
     ]
-
-    return formMap;
+  }
+    return form;
   }

@@ -13,7 +13,7 @@ export default function Section({ sectionHandler, sectionId }) {
         
       return (
         <Form
-          key={'form' + index}
+          key={formMap.key}
           id={'form' + index}
           className='section-form'
           formMap={formMap}
