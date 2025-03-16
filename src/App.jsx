@@ -10,6 +10,8 @@ import formMap from './formMap';
 
 function App() {
 
+  //add a way to delete outputs, and form&outputs
+
   const createFormMap = formMap();
   const personalInformationFormHandler = useSectionHandler(createFormMap.personalInformation);
   const personalInformationMap = createFormMap.personalInformation();
