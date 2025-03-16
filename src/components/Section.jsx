@@ -1,18 +1,15 @@
 import { kebabToTitle } from "../utilityFunctions";
 import Form from "./Form";
 
-export default function Section({ section, sectionId, handler }) {
-    
-  console.log(section);
-  console.log(section.map);
+export default function Section({ sectionHandler, sectionId }) {
 
   return (
     <>
-    <button className='add-form' onClick={section.handle}>
+    <button className='add-form' onClick={sectionHandler.addForm}>
       Add {kebabToTitle(sectionId)}
     </button>
 
-    {section.map.map((formMap, index) => {
+    {sectionHandler.map.map((formMap, index) => {
         
       return (
         <Form
@@ -20,7 +17,7 @@ export default function Section({ section, sectionId, handler }) {
           id={'form' + index}
           className='section-form'
           formMap={formMap}
-          handler={handler}
+          handler={sectionHandler}
         />
       )
     })}

@@ -1,6 +1,7 @@
 import { useState } from "react";
+import useSectionMapHandler from "./useSectionMapHandler";
 
-export default function useSectionHandler() {
+export default function useSectionHandler(formMapFunc) {
 
     const [sectionData, setSectionData] = useState({});
     
@@ -13,8 +14,12 @@ export default function useSectionHandler() {
         }
     }
 
+    const mapHandler = useSectionMapHandler(formMapFunc);
+
     return {
         sectionData,
-        handle
+        handle,
+        map: mapHandler.map,
+        addForm: mapHandler.handle
     }
 }

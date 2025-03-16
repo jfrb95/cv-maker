@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './styles/App.css'
 import Input from './components/Input';
 import Output from './components/Output';
@@ -8,7 +7,6 @@ import useSectionHandler from './hooks/useSectionHandler';
 import FormOutput from './components/FormOutput';
 import SectionOutput from './components/SectionOutputs';
 import formMap from './formMap';
-import useSectionMapHandler from './hooks/useSectionMapHandler';
 
 const log = console.log;
 
@@ -20,22 +18,7 @@ function App() {
 
   const createFormMap = formMap();
 
-  function section(formMapFunc) {
-    const map = [formMapFunc()];
-
-    function addForm() {
-      map.push(formMapFunc());
-      console.log(map);
-    }
-
-    return {
-      addForm,
-      map
-    }
-  }
-
-  const educationSection = useSectionMapHandler(createFormMap.education);
-  const educationHandler = useSectionHandler();
+  const educationSectionHandler = useSectionHandler(createFormMap.education);
 
   return (
     <>
@@ -52,16 +35,14 @@ function App() {
           <div className='form-container'>
 
             <Section
-              section={educationSection}
-              handler={educationHandler}
+              sectionHandler={educationSectionHandler}
               sectionId='education'
             />
 
           </div>
           <div className='cv-container'>
             <SectionOutput
-              section={educationSection}
-              handler={educationHandler}
+              sectionHandler={educationSectionHandler}
             />
           </div>
           
