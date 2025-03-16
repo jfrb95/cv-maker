@@ -8,17 +8,13 @@ import FormOutput from './components/FormOutput';
 import SectionOutput from './components/SectionOutputs';
 import formMap from './formMap';
 
-const log = console.log;
-
-
-
 function App() {
 
-  //NEED TO PUT section.map INTO state IN useSectionHandler
-
   const createFormMap = formMap();
-
+  const personalInformationFormHandler = useSectionHandler(createFormMap.personalInformation);
+  const personalInformationMap = createFormMap.personalInformation();
   const educationSectionHandler = useSectionHandler(createFormMap.education);
+  const experienceSectionHandler = useSectionHandler(createFormMap.experience);
 
   return (
     <>
@@ -34,15 +30,33 @@ function App() {
         
           <div className='form-container'>
 
+            <Form
+              formMap={personalInformationMap}
+              id='personal-information'
+              handler={personalInformationFormHandler}
+            />
             <Section
               sectionHandler={educationSectionHandler}
               sectionId='education'
             />
+            <Section
+              sectionHandler={experienceSectionHandler}
+              sectionId='experience'
+            />
 
           </div>
           <div className='cv-container'>
+
+            <FormOutput
+              formMap={personalInformationMap}
+              formPrefix='personal-information'
+              handler={personalInformationFormHandler}
+            />
             <SectionOutput
               sectionHandler={educationSectionHandler}
+            />
+            <SectionOutput
+              sectionHandler={experienceSectionHandler}
             />
           </div>
           
