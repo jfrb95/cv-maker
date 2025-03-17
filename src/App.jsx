@@ -11,7 +11,9 @@ import formMap from './formMap';
 function App() {
 
   //deleting forms changes the ids of the forms in the DOM, as the id is 
-  //  dynamically created on render.
+  //  dynamically created on render. This means the corresponding outputs 
+  //  are not deleted, as 'form0-' still exists, despite being a different 
+  //  form
 
   const createFormMap = formMap();
   const personalInformationFormHandler = useSectionHandler(createFormMap.personalInformation);
