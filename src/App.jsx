@@ -15,6 +15,12 @@ function App() {
   //  are not deleted, as 'form0-' still exists, despite being a different 
   //  form
 
+  //Also but unrelated to above, when deleting a form does work correctly,
+  //  which it does in certain cases, the sectionData from the form remains,
+  //  so that when 'form#-...' is created again using the button the resulting
+  //  output remains what it was previously. This might be fixed when above
+  //  is fixed, but might also not be undesirable behaviour
+
   const createFormMap = formMap();
   const personalInformationFormHandler = useSectionHandler(createFormMap.personalInformation);
   const personalInformationMap = createFormMap.personalInformation();
