@@ -21,6 +21,9 @@ function App() {
   //  output remains what it was previously. This might be fixed when above
   //  is fixed, but might also not be undesirable behaviour
 
+  //Potential solution - use tracking number in Section or one of the custom
+  //  hooks to keep track of the lowest 'index' that is not available.
+
   const createFormMap = formMap();
   const personalInformationFormHandler = useSectionHandler(createFormMap.personalInformation);
   const personalInformationMap = createFormMap.personalInformation();

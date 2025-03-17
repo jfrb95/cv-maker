@@ -9,6 +9,7 @@ export default function formMap() {
 function personalInformation() {
   const form = {
     key: crypto.randomUUID(),
+    refNo: null,
     map: [
       {
         id: 'name'
