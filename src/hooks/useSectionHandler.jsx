@@ -20,6 +20,7 @@ export default function useSectionHandler(formMapFunc) {
         sectionData,
         handle,
         map: mapHandler.map,
-        addForm: mapHandler.handle
+        addForm: mapHandler.handle,
+        deleteForm: mapHandler.deleteForm
     }
 }

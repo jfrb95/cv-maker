@@ -10,8 +10,13 @@ export default function useSectionMapHandler(formMapFunc) {
     setMap(values => [...values, newFormMap]);
   }
 
+  function deleteForm(reactKey) {
+    setMap(previousMap => previousMap.filter((element) => element.key !== reactKey));
+  }
+
   return {
     handle,
+    deleteForm,
     map
   }
 }

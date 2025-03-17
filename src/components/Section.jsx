@@ -1,5 +1,6 @@
 import { kebabToTitle } from "../utilityFunctions";
 import Form from "./Form";
+import { Fragment } from "react";
 
 export default function Section({ sectionHandler, sectionId }) {
 
@@ -12,13 +13,19 @@ export default function Section({ sectionHandler, sectionId }) {
     {sectionHandler.map.map((formMap, index) => {
         
       return (
+        <Fragment key={formMap.key}>
         <Form
-          key={formMap.key}
           id={'form' + index}
           className='section-form'
           formMap={formMap}
           handler={sectionHandler}
         />
+        <button
+        onClick={() => sectionHandler.deleteForm(formMap.key)}
+        >
+          Delete Entry
+        </button>
+        </Fragment>
       )
     })}
 

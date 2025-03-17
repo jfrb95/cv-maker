@@ -10,7 +10,8 @@ import formMap from './formMap';
 
 function App() {
 
-  //add a way to delete outputs, and form&outputs
+  //deleting forms changes the ids of the forms in the DOM, as the id is 
+  //  dynamically created on render.
 
   const createFormMap = formMap();
   const personalInformationFormHandler = useSectionHandler(createFormMap.personalInformation);
