@@ -4,8 +4,8 @@ export default function SectionOutput({ sectionHandler }) {
 
     return (
         <>
-            {sectionHandler.map.map((formMap, index) => {
-                const formPrefix = `form${index}-`;
+            {sectionHandler.map.map((formMap) => {
+                const formPrefix = `form-${formMap.key}-`;
 
                 return (
                     <FormOutput

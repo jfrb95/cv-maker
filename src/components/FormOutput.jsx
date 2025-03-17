@@ -1,7 +1,6 @@
 import Output from "./Output"
 
 export default function FormOutput({ handler, formMap, formPrefix }) {
-  //formPrefix is 'form1-', 'form0-' etc
   
   if (formPrefix.slice(-1) !== '-') {
     formPrefix += '-';

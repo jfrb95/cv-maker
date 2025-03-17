@@ -10,18 +10,18 @@ export default function Section({ sectionHandler, sectionId }) {
       Add {kebabToTitle(sectionId)}
     </button>
 
-    {sectionHandler.map.map((formMap, index) => {
-        
+    {sectionHandler.map.map((formMap) => {
+
       return (
         <Fragment key={formMap.key}>
         <Form
-          id={'form' + index}
+          id={'form-' + formMap.key}
           className='section-form'
           formMap={formMap}
           handler={sectionHandler}
         />
         <button
-        onClick={() => sectionHandler.deleteForm(formMap.key)}
+          onClick={() => sectionHandler.deleteForm(formMap.key)}
         >
           Delete Entry
         </button>

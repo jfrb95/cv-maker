@@ -4,8 +4,7 @@ export default function useSectionMapHandler(formMapFunc) {
 
   const [map, setMap] = useState([]);
 
-  function handle() {
-    //click button > set map to { map, new section-specific map}
+  function addForm() {
     const newFormMap = formMapFunc();
     setMap(values => [...values, newFormMap]);
   }
@@ -15,7 +14,7 @@ export default function useSectionMapHandler(formMapFunc) {
   }
 
   return {
-    handle,
+    addForm,
     deleteForm,
     map
   }
