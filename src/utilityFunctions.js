@@ -18,3 +18,7 @@ export function kebabToTitle(str) {
         .map(str => capitalizeFirstLetter(str))
         .join(' ');
 }
+
+export function keyToFormKey(key) {
+  return 'form-' + key;
+}

@@ -11,7 +11,6 @@ export default function FormOutput({ handler, formMap, formPrefix }) {
       {formMap.map.map((output) => {
         return (
           Object.keys(output).map((key) => {
-            console.log('output[key]', output[key]);
             return (
               <Output
                 key={key}

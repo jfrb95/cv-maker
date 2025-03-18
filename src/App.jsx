@@ -30,6 +30,10 @@ function App() {
   const educationSectionHandler = useSectionHandler(createFormMap.education);
   const experienceSectionHandler = useSectionHandler(createFormMap.experience);
 
+  function logEducationData() {
+    console.log(educationSectionHandler.sectionData);
+  }
+
   return (
     <>
       <header>
@@ -43,6 +47,11 @@ function App() {
         <main>
         
           <div className='form-container'>
+            <button
+              onClick={logEducationData}
+            >
+              Log Data
+            </button>
 
             <Form
               formMap={personalInformationMap}

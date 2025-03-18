@@ -1,4 +1,4 @@
-import { kebabToTitle } from "../utilityFunctions";
+import { kebabToTitle, keyToFormKey } from "../utilityFunctions";
 import Form from "./Form";
 import { Fragment } from "react";
 
@@ -15,7 +15,7 @@ export default function Section({ sectionHandler, sectionId }) {
       return (
         <Fragment key={formMap.key}>
         <Form
-          id={'form-' + formMap.key}
+          id={keyToFormKey(formMap.key)}
           className='section-form'
           formMap={formMap}
           handler={sectionHandler}
