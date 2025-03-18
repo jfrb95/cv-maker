@@ -38,6 +38,7 @@ export default function useSectionHandler(formMapFunc) {
         handle,
         map: mapHandler.map,
         addForm: mapHandler.addForm,
-        deleteForm: deleteData
+        deleteForm: deleteData,
+        toggleHideForm: mapHandler.toggleHideForm
     }
 }

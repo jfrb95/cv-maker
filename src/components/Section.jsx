@@ -12,11 +12,13 @@ export default function Section({ sectionHandler, sectionId }) {
 
     {sectionHandler.map.map((formMap) => {
 
+      const classes = 'section-form' + formMap.hidden ? ' hidden' : '';
+
       return (
         <Fragment key={formMap.key}>
         <Form
           id={keyToFormKey(formMap.key)}
-          className='section-form'
+          className={classes}
           formMap={formMap}
           handler={sectionHandler}
         />
@@ -26,7 +28,7 @@ export default function Section({ sectionHandler, sectionId }) {
           Delete Entry
         </button>
         <button
-          
+          onClick={() => {sectionHandler.toggleHideForm(formMap.key)}}
         >
           Toggle Output
         </button>

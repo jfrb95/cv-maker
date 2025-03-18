@@ -6,6 +6,10 @@ export default function FormOutput({ handler, formMap, formPrefix }) {
     formPrefix += '-';
   }
 
+  if (formMap.hidden) {
+    return;
+  }
+
   return (
     <>
       {formMap.map.map((output) => {

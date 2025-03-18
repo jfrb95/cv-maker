@@ -9,7 +9,7 @@ export default function formMap() {
 function personalInformation() {
   const form = {
     key: crypto.randomUUID(),
-    refNo: null,
+    hidden: false,
     map: [
       {
         id: 'name'
@@ -29,6 +29,7 @@ function personalInformation() {
 function education() {
   const form = {
     key: crypto.randomUUID(),
+    hidden: false,
     map: [
       {
         id: 'school-name'
@@ -50,6 +51,7 @@ function education() {
 function experience() {
   const form = {
     key: crypto.randomUUID(),
+    hidden: false,
     map: [
       {
         id: 'company-name'
