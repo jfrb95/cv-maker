@@ -25,17 +25,12 @@ export default function useSectionHandler(formMapFunc) {
 
       Object.keys(sectionData).forEach(inputKey => {
         if (inputKey.includes(formKey)) {
-          console.log(inputKey);
           setSectionData(previousState => {
             const {[inputKey]: _ , ...remainingState} = previousState;
             return {...remainingState}
           })
         }
       });
-
-      /*
-      
-      */
     }
 
     return {
