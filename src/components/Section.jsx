@@ -25,6 +25,11 @@ export default function Section({ sectionHandler, sectionId }) {
         >
           Delete Entry
         </button>
+        <button
+          
+        >
+          Toggle Output
+        </button>
         </Fragment>
       )
     })}
