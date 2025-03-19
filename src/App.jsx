@@ -10,17 +10,11 @@ import formMap from './formMap';
 
 function App() {
 
-  //add function to map handler that toggles hidden class on formOutput
-
   const createFormMap = formMap();
   const personalInformationFormHandler = useSectionHandler(createFormMap.personalInformation);
   const personalInformationMap = createFormMap.personalInformation();
   const educationSectionHandler = useSectionHandler(createFormMap.education);
   const experienceSectionHandler = useSectionHandler(createFormMap.experience);
-
-  function logEducationData() {
-    console.log(educationSectionHandler.sectionData);
-  }
 
   return (
     <>
@@ -35,11 +29,6 @@ function App() {
         <main>
         
           <div className='form-container'>
-            <button
-              onClick={logEducationData}
-            >
-              Log Data
-            </button>
 
             <Form
               formMap={personalInformationMap}
