@@ -2,12 +2,34 @@
   border: 1px solid;
 }
 
+body {
+  display: flex;
+  
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4;
+}
+footer {
+  min-height: 200px;
+  min-width: 200px;
+}
+/*
+#content-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+*/
+/*   MAIN   */
+
 main {
   display: flex;
-  justify-content: center;
+  width: 90%;
+  max-width: 1200px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .cv-container {
+  background-color: lightblue;
   --page-size-A4-height: 11.7in;
   --page-size-A4-width: 8.3in;
 
@@ -17,4 +39,8 @@ main {
   max-width: var(--page-size-A4-width);
 
   padding: 2rem;
+}
+
+.form-container {
+  padding: 1rem;
 }

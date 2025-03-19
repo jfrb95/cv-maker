@@ -10,6 +10,8 @@ import formMap from './formMap';
 
 function App() {
 
+
+
   const createFormMap = formMap();
   const personalInformationFormHandler = useSectionHandler(createFormMap.personalInformation);
   const personalInformationMap = createFormMap.personalInformation();
@@ -29,7 +31,6 @@ function App() {
         <main>
         
           <div className='form-container'>
-
             <Form
               formMap={personalInformationMap}
               id='personal-information'
@@ -43,7 +44,6 @@ function App() {
               sectionHandler={experienceSectionHandler}
               sectionId='experience'
             />
-
           </div>
           <div className='cv-container'>
 
