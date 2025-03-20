@@ -37,3 +37,10 @@ a:hover {
 .hidden {
   display: none;
 }
+
+body {
+  display: flex;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4;
+}
