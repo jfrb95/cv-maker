@@ -20,6 +20,7 @@ export default function FormOutput({ handler, formMap, formPrefix }) {
                 key={key}
                 forInputId={formPrefix + output[key]}
                 inputState={handler.sectionData}
+                classes={output[key] + '-output'}
                 element={output[key].element}
               />
             )

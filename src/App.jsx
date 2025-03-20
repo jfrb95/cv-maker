@@ -10,7 +10,10 @@ import formMap from './formMap';
 
 function App() {
 
+  //add classes to outputs so they can be formatted
 
+  //BUG: in formMap.js, adding properties to the objects representing the inputs
+  //  also adds an associated output for that proerty. Only visible in devtools
 
   const createFormMap = formMap();
   const personalInformationFormHandler = useSectionHandler(createFormMap.personalInformation);
