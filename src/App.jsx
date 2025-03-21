@@ -10,7 +10,8 @@ import formMap from './formMap';
 
 function App() {
 
-  //add classes to outputs so they can be formatted
+  //add save feature, store saves in localstorage/whatever it is called
+  //  do this before formatting the output to streamline the process
 
   //BUG: in formMap.js, adding properties to the objects representing the inputs
   //  also adds an associated output for that proerty. Only visible in devtools
@@ -34,6 +35,7 @@ function App() {
         <main>
         
           <div className='form-container'>
+
             <Form
               formMap={personalInformationMap}
               id='personal-information'
@@ -47,20 +49,31 @@ function App() {
               sectionHandler={experienceSectionHandler}
               sectionId='experience'
             />
+            
           </div>
           <div className='cv-container'>
 
-            <FormOutput
-              formMap={personalInformationMap}
-              formPrefix='personal-information'
-              handler={personalInformationFormHandler}
-            />
-            <SectionOutput
-              sectionHandler={educationSectionHandler}
-            />
-            <SectionOutput
-              sectionHandler={experienceSectionHandler}
-            />
+            <div id='personal-information-output'>
+              <FormOutput
+                formMap={personalInformationMap}
+                formPrefix='personal-information'
+                handler={personalInformationFormHandler}
+              />
+            </div>
+            
+            <div className="section-output">
+              <SectionOutput
+                sectionHandler={educationSectionHandler}
+                sectionId='education'
+              />
+            </div>
+            
+            <div className="section-output">
+              <SectionOutput
+                sectionHandler={experienceSectionHandler}
+                sectionId='experience'
+              />
+            </div>
           </div>
           
         </main>

@@ -1,7 +1,7 @@
 export default function Output({ forInputId, inputState, classes, element:Element='p' }) {
     return (
         <Element
-          classList={classes}
+          className={classes}
         >
           {inputState[forInputId]}
         </Element>

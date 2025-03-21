@@ -12,7 +12,8 @@ function personalInformation() {
     hidden: false,
     map: [
       {
-        id: 'name'
+        id: 'name',
+        element: 'h1'
       },
       {
         id: 'email'
