@@ -33,11 +33,6 @@ export default function useSectionHandler(formMapFunc) {
       });
     }
 
-    function example() {
-      mapHandler.example();
-      setSectionData()
-    }
-
     return {
         sectionData,
         handle,

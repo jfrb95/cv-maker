@@ -10,8 +10,7 @@ import formMap from './formMap';
 
 function App() {
 
-  //working on useSectionHandle to add example function which loads example
-  //  from data stored in formMap().func().example
+  //needs style added
 
   //BUG: in formMap.js, adding properties to the objects representing the inputs
   //  also adds an associated output for that proerty. Only visible in devtools
@@ -21,6 +20,18 @@ function App() {
   const personalInformationMap = createFormMap.personalInformation();
   const educationSectionHandler = useSectionHandler(createFormMap.education);
   const experienceSectionHandler = useSectionHandler(createFormMap.experience);
+
+  function loadExample() {
+    personalInformationFormHandler.example();
+    educationSectionHandler.example();
+    experienceSectionHandler.example();
+  }
+
+  function logSectionData() {
+    console.log(personalInformationFormHandler.sectionData);
+    console.log(educationSectionHandler.sectionData);
+    console.log(experienceSectionHandler.sectionData);
+  }
 
   return (
     <>
@@ -35,7 +46,7 @@ function App() {
         <main>
         
           <div className='form-container'>
-
+            
             <Form
               formMap={personalInformationMap}
               id='personal-information'

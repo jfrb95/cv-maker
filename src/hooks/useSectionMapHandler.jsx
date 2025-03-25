@@ -3,6 +3,7 @@ import { useState } from "react"
 export default function useSectionMapHandler(formMapFunc) {
 
   const [map, setMap] = useState([]);
+  let exampleFormUUID = null;
 
   function addForm() {
     const newFormMap = formMapFunc();
@@ -27,15 +28,10 @@ export default function useSectionMapHandler(formMapFunc) {
       );
   }
 
-  function example() {
-    setMap([formMapFunc()])
-  }
-
   return {
     addForm,
     deleteForm,
     toggleHideForm,
-    example,
     map
   }
 }
