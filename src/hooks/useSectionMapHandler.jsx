@@ -27,10 +27,15 @@ export default function useSectionMapHandler(formMapFunc) {
       );
   }
 
+  function example() {
+    setMap([formMapFunc()])
+  }
+
   return {
     addForm,
     deleteForm,
     toggleHideForm,
+    example,
     map
   }
 }

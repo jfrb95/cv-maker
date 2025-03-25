@@ -10,8 +10,8 @@ import formMap from './formMap';
 
 function App() {
 
-  //add save feature, store saves in localstorage/whatever it is called
-  //  do this before formatting the output to streamline the process
+  //working on useSectionHandle to add example function which loads example
+  //  from data stored in formMap().func().example
 
   //BUG: in formMap.js, adding properties to the objects representing the inputs
   //  also adds an associated output for that proerty. Only visible in devtools
